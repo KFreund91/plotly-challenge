@@ -57,7 +57,7 @@ function init(i) {
       mode: `markers`,
       marker: {
         size: sampleValues,
-        color: 'green'
+        color: OTU_top
       }
     };
 
@@ -71,9 +71,10 @@ function init(i) {
 
     //demographics    
     var sampleData = d3.select(`#sample-metadata`);
+    sampleData.html("");
     Object.entries(metadata).forEach(function ([key, value]) {
       var row = sampleData.append("p");
-      row.text(`${key}:${value}`)
+      row.text(`${key.toUpperCase()}:${value}`)
     })
 
 
